@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "Page1",
-    "slug": "page1",
+    "name": "home",
+    "slug": "home",
     "layouts": [
       {
         "viewMode": false,
@@ -2265,7 +2265,7 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Page1_FindQuery",
+              "id": "home_FindQuery",
               "name": "FindQuery",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
@@ -2287,14 +2287,15 @@
           "data_table"
         ],
         "validOnPageLoadActions": true,
-        "id": "Page1",
+        "id": "home",
         "deleted": false,
         "policies": [],
         "userPermissions": []
       }
     ],
     "userPermissions": [],
-    "policies": []
+    "policies": [],
+    "isHidden": false
   },
   "deleted": false,
   "gitSyncId": "6312dd1f62862f234d3b9fa1_6312dd1f62862f234d3b9fa3"

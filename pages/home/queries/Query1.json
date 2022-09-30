@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "gege",
+    "name": "Query1",
     "datasource": {
       "name": "users",
       "pluginId": "postgres-plugin",
@@ -13,37 +13,30 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Page1",
+    "pageId": "home",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO users\n  (name, gender, email)\nVALUES\n  (\n    {{ nameInput.text }},\n    {{ genderDropdown.selectedOptionValue }},\n    {{ nameInput.text }}\n  );",
+      "body": "DELETE FROM users WHERE id = -1;",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ]
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "genderDropdown.selectedOptionValue",
-      "nameInput.text"
-    ],
+    "jsonPathKeys": [],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Page1_gege",
+  "id": "home_Query1",
   "deleted": false,
-  "gitSyncId": "6312dd1f62862f234d3b9fa1_63147b8491f7e84c98967da0"
+  "gitSyncId": "6312dd1f62862f234d3b9fa1_63147bfc62862f234d3bb152"
 }

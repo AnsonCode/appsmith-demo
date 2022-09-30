@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "DeleteQuery",
+    "name": "InsertQuery",
     "datasource": {
       "name": "movies",
       "pluginId": "mongo-plugin",
@@ -13,11 +13,10 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Page1",
+    "pageId": "home",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "template_table/{{data_table.selectedRow._ref}}",
       "encodeParamsToggle": true,
       "formData": {
         "collection": {
@@ -26,20 +25,21 @@
           "componentData": "movies"
         },
         "command": {
-          "data": "DELETE",
+          "data": "INSERT",
           "viewType": "component",
-          "componentData": "DELETE"
+          "componentData": "INSERT"
         },
-        "delete": {
-          "query": {
-            "data": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
+        "insert": {
+          "documents": {
+            "data": "{{insert_form.formData}}",
             "viewType": "component",
-            "componentData": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }"
-          },
-          "limit": {
-            "data": "SINGLE",
-            "viewType": "component",
-            "componentData": "SINGLE"
+            "componentData": "{\n \"genres\": {{insert_col_input1.text}}, \n \"homepage\": {{insert_col_input2.text}}, \n \"imdb_id\": {{insert_col_input3.text}}, \n \"poster_path\": {{insert_col_input4.text}}\n}"
+          }
+        },
+        "misc": {
+          "formToNativeQuery": {
+            "data": "{\n  \"insert\": \"movies\",\n  \"documents\": {{insert_form.formData}}\n}\n",
+            "status": "SUCCESS"
           }
         },
         "smartSubstitution": {
@@ -54,15 +54,18 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "data_table.selectedRow._ref",
-      "data_table.triggeredRow._id"
+      "insert_col_input1.text",
+      "insert_col_input2.text",
+      "insert_col_input3.text",
+      "insert_col_input4.text",
+      "insert_form.formData"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Page1_DeleteQuery",
+  "id": "home_InsertQuery",
   "deleted": false,
-  "gitSyncId": "6312dd1f62862f234d3b9fa1_6312dd7c9316f9675669b23e"
+  "gitSyncId": "6312dd1f62862f234d3b9fa1_6312dd7c9316f9675669b23c"
 }
