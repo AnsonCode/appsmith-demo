@@ -26,11 +26,11 @@
       "queryParameters": [
         {
           "key": "skip",
-          "value": "0"
+          "value": "{{blog.pageOffset}}"
         },
         {
           "key": "take",
-          "value": "10"
+          "value": "{{blog.pageSize}}"
         }
       ],
       "bodyFormData": [],
@@ -49,12 +49,21 @@
     "dynamicBindingPathList": [
       {
         "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "blog.pageOffset",
+      "blog.pageSize"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],

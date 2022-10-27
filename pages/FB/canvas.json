@@ -83,6 +83,9 @@
                 },
                 {
                   "key": "primaryColumns.title.computedValue"
+                },
+                {
+                  "key": "totalRecordsCount"
                 }
               ],
               "leftColumn": 0,
@@ -94,7 +97,7 @@
               "isVisible": true,
               "enableClientSideSearch": true,
               "version": 1,
-              "totalRecordsCount": 0,
+              "totalRecordsCount": "{{bloglist.data.data.total}}",
               "isLoading": false,
               "childStylesheet": {
                 "button": {
@@ -124,17 +127,14 @@
               "defaultSelectedRowIndices": [
                 0
               ],
-              "widgetName": "Table1",
+              "widgetName": "blog",
               "defaultPageSize": 0,
               "columnOrder": [
                 "id",
                 "title"
               ],
-              "dynamicPropertyPathList": [
-                {
-                  "key": "isVisiblePagination"
-                }
-              ],
+              "dynamicPropertyPathList": [],
+              "compactMode": "SHORT",
               "displayName": "Table",
               "bottomRow": 65,
               "columnWidthMap": {
@@ -170,7 +170,7 @@
                   "label": "ID",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
+                  "computedValue": "{{blog.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
                   "validation": {}
                 },
                 "title": {
@@ -195,7 +195,7 @@
                   "label": "标题",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"title\"]))}}",
+                  "computedValue": "{{blog.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"title\"]))}}",
                   "validation": {}
                 }
               },
@@ -208,10 +208,11 @@
               "label": "Data",
               "searchKey": "",
               "parentId": "0",
+              "serverSidePaginationEnabled": true,
               "renderMode": "CANVAS",
               "horizontalAlignment": "LEFT",
               "isVisibleSearch": true,
-              "isVisiblePagination": "true",
+              "isVisiblePagination": true,
               "verticalAlignment": "CENTER"
             }
           ]
@@ -223,7 +224,10 @@
               "name": "bloglist",
               "confirmBeforeExecute": false,
               "pluginType": "API",
-              "jsonPathKeys": [],
+              "jsonPathKeys": [
+                "blog.pageOffset",
+                "blog.pageSize"
+              ],
               "timeoutInMillisecond": 10000
             }
           ]
