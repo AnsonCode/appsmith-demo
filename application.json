@@ -3,6 +3,10 @@
     {
       "id": "home2",
       "isDefault": true
+    },
+    {
+      "id": "FB",
+      "isDefault": false
     }
   ],
   "viewMode": false,

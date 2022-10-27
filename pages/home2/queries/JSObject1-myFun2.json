@@ -20,6 +20,7 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "async () => {}",
+      "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
     },

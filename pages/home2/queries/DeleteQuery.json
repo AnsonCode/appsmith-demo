@@ -19,6 +19,7 @@
       "paginationType": "NONE",
       "path": "template_table/{{data_table.selectedRow._ref}}",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
         "collection": {
           "data": "movies",
