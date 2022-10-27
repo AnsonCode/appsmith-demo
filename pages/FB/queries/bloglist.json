@@ -31,6 +31,10 @@
         {
           "key": "take",
           "value": "{{blog.pageSize}}"
+        },
+        {
+          "key": "search",
+          "value": "{{blog.searchText}}"
         }
       ],
       "bodyFormData": [],
@@ -55,6 +59,9 @@
       },
       {
         "key": "queryParameters[1].value"
+      },
+      {
+        "key": "queryParameters[2].value"
       }
     ],
     "isValid": true,
@@ -62,7 +69,8 @@
     "messages": [],
     "jsonPathKeys": [
       "blog.pageOffset",
-      "blog.pageSize"
+      "blog.pageSize",
+      "blog.searchText"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
