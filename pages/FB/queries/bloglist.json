@@ -19,7 +19,7 @@
     "pageId": "FB",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
-      "paginationType": "NONE",
+      "paginationType": "PAGE_NO",
       "path": "/app/main/operations/Test",
       "headers": [],
       "encodeParamsToggle": true,

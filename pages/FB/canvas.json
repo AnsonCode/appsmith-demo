@@ -32,6 +32,7 @@
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
               "topRow": 0,
               "isSortable": true,
+              "onPageChange": "{{bloglist.run()}}",
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
               "animateLoading": true,
@@ -95,10 +96,11 @@
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisibleFilters": true,
               "isVisible": true,
-              "enableClientSideSearch": true,
+              "enableClientSideSearch": false,
               "version": 1,
               "totalRecordsCount": "{{bloglist.data.data.total}}",
               "isLoading": false,
+              "onSearchTextChanged": "{{bloglist.run()}}",
               "childStylesheet": {
                 "button": {
                   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -148,8 +150,19 @@
               },
               "parentRowSpace": 10,
               "hideCard": false,
+              "onPageSizeChange": "{{bloglist.run()}}",
               "parentColumnSpace": 20.0625,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onPageChange"
+                },
+                {
+                  "key": "onPageSizeChange"
+                },
+                {
+                  "key": "onSearchTextChanged"
+                }
+              ],
               "borderWidth": "1",
               "primaryColumns": {
                 "id": {
