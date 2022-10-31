@@ -7,6 +7,14 @@
     {
       "id": "FB",
       "isDefault": false
+    },
+    {
+      "id": "CP",
+      "isDefault": false
+    },
+    {
+      "id": "博客",
+      "isDefault": false
     }
   ],
   "viewMode": false,

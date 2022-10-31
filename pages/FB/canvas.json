@@ -150,7 +150,7 @@
               },
               "parentRowSpace": 10,
               "hideCard": false,
-              "onPageSizeChange": "{{bloglist.run()}}",
+              "onPageSizeChange": "{{bloglist.run(() => showAlert('刷新成功','info'), () => {})}}",
               "parentColumnSpace": 20.0625,
               "dynamicTriggerPathList": [
                 {
