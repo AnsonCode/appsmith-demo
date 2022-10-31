@@ -399,21 +399,25 @@
                   "key": "totalRecordsCount"
                 },
                 {
-                  "key": "primaryColumns.customColumn1.buttonColor"
+                  "key": "primaryColumns.EditActions1.saveButtonColor"
                 },
                 {
-                  "key": "primaryColumns.customColumn1.borderRadius"
+                  "key": "primaryColumns.EditActions1.saveBorderRadius"
                 },
                 {
-                  "key": "primaryColumns.customColumn1.boxShadow"
+                  "key": "primaryColumns.EditActions1.discardBorderRadius"
                 },
                 {
-                  "key": "primaryColumns.customColumn1.buttonLabel"
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.discardActionLabel"
                 }
               ],
               "leftColumn": 5,
               "delimiter": ",",
               "defaultSelectedRowIndex": 0,
+              "showInlineEditingOptionDropdown": true,
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisibleFilters": true,
               "isVisible": true,
@@ -454,9 +458,16 @@
               "columnOrder": [
                 "id",
                 "title",
-                "customColumn1"
+                "EditActions1"
               ],
-              "dynamicPropertyPathList": [],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                }
+              ],
               "displayName": "Table",
               "bottomRow": 70,
               "columnWidthMap": {
@@ -476,7 +487,7 @@
                   "key": "onPageChange"
                 },
                 {
-                  "key": "primaryColumns.customColumn1.onClick"
+                  "key": "primaryColumns.EditActions1.onDiscard"
                 }
               ],
               "borderWidth": "1",
@@ -521,8 +532,8 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "title",
@@ -531,16 +542,16 @@
                   "computedValue": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"title\"]))}}",
                   "validation": {}
                 },
-                "customColumn1": {
+                "EditActions1": {
                   "allowCellWrapping": false,
-                  "index": 2,
+                  "index": 3,
                   "width": 150,
-                  "originalId": "customColumn1",
-                  "id": "customColumn1",
-                  "alias": "customColumn1",
+                  "originalId": "EditActions1",
+                  "id": "EditActions1",
+                  "alias": "EditActions1",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
-                  "columnType": "button",
+                  "columnType": "editActions",
                   "textSize": "0.875rem",
                   "enableFilter": true,
                   "enableSort": true,
@@ -550,19 +561,24 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": true,
-                  "label": "操作",
+                  "label": "操作2",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "",
                   "validation": {},
                   "buttonStyle": "rgb(3, 179, 101)",
-                  "labelColor": "#FFFFFF",
-                  "buttonColor": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
-                  "borderRadius": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
-                  "boxShadow": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
-                  "customAlias": "",
-                  "buttonLabel": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( '删除'))}}",
-                  "onClick": "{{delBlog.run(() => blog_list.run(), () => showAlert('删除失败','error'))}}"
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "Save",
+                  "discardActionLabel": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( '删除'))}}",
+                  "saveButtonColor": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( !blogtable.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "",
+                  "onDiscard": "{{delBlog.run(() => blog_list.run(), () => showAlert('删除失败...'))}}"
                 }
               },
               "key": "il6oct9w4j",
