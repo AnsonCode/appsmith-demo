@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 850,
+          "bottomRow": 1040,
           "containerStyle": "none",
           "snapRows": 85,
           "parentRowSpace": 1,
@@ -412,6 +412,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.discardActionLabel"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveActionLabel"
                 }
               ],
               "leftColumn": 5,
@@ -469,7 +472,7 @@
                 }
               ],
               "displayName": "Table",
-              "bottomRow": 70,
+              "bottomRow": 96,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -488,6 +491,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.onDiscard"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
                 }
               ],
               "borderWidth": "1",
@@ -569,7 +575,7 @@
                   "buttonStyle": "rgb(3, 179, 101)",
                   "saveIconAlign": "left",
                   "discardIconAlign": "left",
-                  "saveActionLabel": "Save",
+                  "saveActionLabel": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( '保存'))}}",
                   "discardActionLabel": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( '删除'))}}",
                   "saveButtonColor": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
                   "discardButtonColor": "#F22B2B",
@@ -578,7 +584,8 @@
                   "discardButtonVariant": "TERTIARY",
                   "isSaveDisabled": "{{blogtable.processedTableData.map((currentRow, currentIndex) => ( !blogtable.updatedRowIndices.includes(currentIndex)))}}",
                   "isDiscardDisabled": "",
-                  "onDiscard": "{{delBlog.run(() => blog_list.run(), () => showAlert('删除失败...'))}}"
+                  "onDiscard": "{{delBlog.run(() => blog_list.run(), () => showAlert('删除失败...'))}}",
+                  "onSave": "{{updateblog.run(() => showAlert('更新成功'), () => {})}}"
                 }
               },
               "key": "il6oct9w4j",
